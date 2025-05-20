@@ -105,7 +105,7 @@
             this.button2.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.Location = new System.Drawing.Point(717, 439);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(161, 60);
+            this.button2.Size = new System.Drawing.Size(161, 71);
             this.button2.TabIndex = 7;
             this.button2.Text = "Отобразить все";
             this.button2.UseVisualStyleBackColor = false;

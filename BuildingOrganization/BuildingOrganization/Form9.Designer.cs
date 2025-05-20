@@ -89,7 +89,7 @@
             this.button1.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(504, 288);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 50);
+            this.button1.Size = new System.Drawing.Size(139, 66);
             this.button1.TabIndex = 10;
             this.button1.Text = "Получить виды работ";
             this.button1.UseVisualStyleBackColor = false;
@@ -133,9 +133,9 @@
             this.button2.BackColor = System.Drawing.Color.AntiqueWhite;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(504, 350);
+            this.button2.Location = new System.Drawing.Point(504, 360);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(139, 50);
+            this.button2.Size = new System.Drawing.Size(139, 64);
             this.button2.TabIndex = 15;
             this.button2.Text = "Получить все виды работ";
             this.button2.UseVisualStyleBackColor = false;

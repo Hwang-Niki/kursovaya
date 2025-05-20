@@ -1,14 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0438 \u0438 \u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F 3\u043A2\u0441\\BuildingOrganization\\",
+  "WorkspaceRootPath": "C:\\Users\\youan\\Documents\\GitHub\\kursovaya\\BuildingOrganization\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{53E099E8-AFF9-4FEC-B2D1-CA929AD5C0F9}|BuildingOrganization\\BuildingOrganization.csproj|e:\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0438 \u0438 \u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F 3\u043A2\u0441\\buildingorganization\\buildingorganization\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{53E099E8-AFF9-4FEC-B2D1-CA929AD5C0F9}|BuildingOrganization\\BuildingOrganization.csproj|solutionrelative:buildingorganization\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{53E099E8-AFF9-4FEC-B2D1-CA929AD5C0F9}|BuildingOrganization\\BuildingOrganization.csproj|c:\\users\\youan\\documents\\github\\kursovaya\\buildingorganization\\buildingorganization\\form9.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{53E099E8-AFF9-4FEC-B2D1-CA929AD5C0F9}|BuildingOrganization\\BuildingOrganization.csproj|solutionrelative:buildingorganization\\form9.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{53E099E8-AFF9-4FEC-B2D1-CA929AD5C0F9}|BuildingOrganization\\BuildingOrganization.csproj|e:\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0438 \u0438 \u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F 3\u043A2\u0441\\buildingorganization\\buildingorganization\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{53E099E8-AFF9-4FEC-B2D1-CA929AD5C0F9}|BuildingOrganization\\BuildingOrganization.csproj|solutionrelative:buildingorganization\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{53E099E8-AFF9-4FEC-B2D1-CA929AD5C0F9}|BuildingOrganization\\BuildingOrganization.csproj|c:\\users\\youan\\documents\\github\\kursovaya\\buildingorganization\\buildingorganization\\form8.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{53E099E8-AFF9-4FEC-B2D1-CA929AD5C0F9}|BuildingOrganization\\BuildingOrganization.csproj|solutionrelative:buildingorganization\\form8.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53E099E8-AFF9-4FEC-B2D1-CA929AD5C0F9}|BuildingOrganization\\BuildingOrganization.csproj|c:\\users\\youan\\documents\\github\\kursovaya\\buildingorganization\\buildingorganization\\form7.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{53E099E8-AFF9-4FEC-B2D1-CA929AD5C0F9}|BuildingOrganization\\BuildingOrganization.csproj|solutionrelative:buildingorganization\\form7.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53E099E8-AFF9-4FEC-B2D1-CA929AD5C0F9}|BuildingOrganization\\BuildingOrganization.csproj|c:\\users\\youan\\documents\\github\\kursovaya\\buildingorganization\\buildingorganization\\form6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{53E099E8-AFF9-4FEC-B2D1-CA929AD5C0F9}|BuildingOrganization\\BuildingOrganization.csproj|solutionrelative:buildingorganization\\form6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53E099E8-AFF9-4FEC-B2D1-CA929AD5C0F9}|BuildingOrganization\\BuildingOrganization.csproj|c:\\users\\youan\\documents\\github\\kursovaya\\buildingorganization\\buildingorganization\\form5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{53E099E8-AFF9-4FEC-B2D1-CA929AD5C0F9}|BuildingOrganization\\BuildingOrganization.csproj|solutionrelative:buildingorganization\\form5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53E099E8-AFF9-4FEC-B2D1-CA929AD5C0F9}|BuildingOrganization\\BuildingOrganization.csproj|c:\\users\\youan\\documents\\github\\kursovaya\\buildingorganization\\buildingorganization\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{53E099E8-AFF9-4FEC-B2D1-CA929AD5C0F9}|BuildingOrganization\\BuildingOrganization.csproj|solutionrelative:buildingorganization\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +39,74 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Form4.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "E:\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0438 \u0438 \u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F 3\u043A2\u0441\\BuildingOrganization\\BuildingOrganization\\Form4.cs",
-              "RelativeDocumentMoniker": "BuildingOrganization\\Form4.cs",
-              "ToolTip": "E:\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0438 \u0438 \u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F 3\u043A2\u0441\\BuildingOrganization\\BuildingOrganization\\Form4.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "BuildingOrganization\\Form4.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Title": "Form9.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\youan\\Documents\\GitHub\\kursovaya\\BuildingOrganization\\BuildingOrganization\\Form9.cs",
+              "RelativeDocumentMoniker": "BuildingOrganization\\Form9.cs",
+              "ToolTip": "C:\\Users\\youan\\Documents\\GitHub\\kursovaya\\BuildingOrganization\\BuildingOrganization\\Form9.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "BuildingOrganization\\Form9.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T13:33:10.14Z",
+              "WhenOpened": "2025-05-20T07:51:08.626Z",
               "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Form4.cs",
-              "DocumentMoniker": "E:\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0438 \u0438 \u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F 3\u043A2\u0441\\BuildingOrganization\\BuildingOrganization\\Form4.cs",
-              "RelativeDocumentMoniker": "BuildingOrganization\\Form4.cs",
-              "ToolTip": "E:\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0438 \u0438 \u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F 3\u043A2\u0441\\BuildingOrganization\\BuildingOrganization\\Form4.cs",
-              "RelativeToolTip": "BuildingOrganization\\Form4.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAmwDwAAABiAAAAAAAAAA==",
+              "Title": "Form8.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\youan\\Documents\\GitHub\\kursovaya\\BuildingOrganization\\BuildingOrganization\\Form8.cs",
+              "RelativeDocumentMoniker": "BuildingOrganization\\Form8.cs",
+              "ToolTip": "C:\\Users\\youan\\Documents\\GitHub\\kursovaya\\BuildingOrganization\\BuildingOrganization\\Form8.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "BuildingOrganization\\Form8.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T13:32:02.621Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T07:51:02.12Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form7.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\youan\\Documents\\GitHub\\kursovaya\\BuildingOrganization\\BuildingOrganization\\Form7.cs",
+              "RelativeDocumentMoniker": "BuildingOrganization\\Form7.cs",
+              "ToolTip": "C:\\Users\\youan\\Documents\\GitHub\\kursovaya\\BuildingOrganization\\BuildingOrganization\\Form7.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "BuildingOrganization\\Form7.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T07:50:58.465Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form6.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\youan\\Documents\\GitHub\\kursovaya\\BuildingOrganization\\BuildingOrganization\\Form6.cs",
+              "RelativeDocumentMoniker": "BuildingOrganization\\Form6.cs",
+              "ToolTip": "C:\\Users\\youan\\Documents\\GitHub\\kursovaya\\BuildingOrganization\\BuildingOrganization\\Form6.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "BuildingOrganization\\Form6.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T07:50:56.854Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form5.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\youan\\Documents\\GitHub\\kursovaya\\BuildingOrganization\\BuildingOrganization\\Form5.cs",
+              "RelativeDocumentMoniker": "BuildingOrganization\\Form5.cs",
+              "ToolTip": "C:\\Users\\youan\\Documents\\GitHub\\kursovaya\\BuildingOrganization\\BuildingOrganization\\Form5.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "BuildingOrganization\\Form5.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T07:50:44.112Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\youan\\Documents\\GitHub\\kursovaya\\BuildingOrganization\\BuildingOrganization\\Form1.cs",
+              "RelativeDocumentMoniker": "BuildingOrganization\\Form1.cs",
+              "ToolTip": "C:\\Users\\youan\\Documents\\GitHub\\kursovaya\\BuildingOrganization\\BuildingOrganization\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "BuildingOrganization\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T07:50:28.189Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
             }
           ]
         }

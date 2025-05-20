@@ -38,3 +38,24 @@ E:\практики и курсовая\курсовая 3к2с\BuildingOrganiza
 E:\практики и курсовая\курсовая 3к2с\BuildingOrganization\BuildingOrganization\bin\Debug\BuildingOrganization.exe
 E:\практики и курсовая\курсовая 3к2с\BuildingOrganization\BuildingOrganization\bin\Debug\BuildingOrganization.pdb
 E:\практики и курсовая\курсовая 3к2с\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form6.resources
+C:\Users\youan\Documents\GitHub\kursovaya\BuildingOrganization\BuildingOrganization\bin\Debug\Database1.mdf
+C:\Users\youan\Documents\GitHub\kursovaya\BuildingOrganization\BuildingOrganization\bin\Debug\Database1_log.ldf
+C:\Users\youan\Documents\GitHub\kursovaya\BuildingOrganization\BuildingOrganization\bin\Debug\BuildingOrganization.exe.config
+C:\Users\youan\Documents\GitHub\kursovaya\BuildingOrganization\BuildingOrganization\bin\Debug\BuildingOrganization.exe
+C:\Users\youan\Documents\GitHub\kursovaya\BuildingOrganization\BuildingOrganization\bin\Debug\BuildingOrganization.pdb
+C:\Users\youan\Documents\GitHub\kursovaya\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.csproj.AssemblyReference.cache
+C:\Users\youan\Documents\GitHub\kursovaya\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form1.resources
+C:\Users\youan\Documents\GitHub\kursovaya\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form10.resources
+C:\Users\youan\Documents\GitHub\kursovaya\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form2.resources
+C:\Users\youan\Documents\GitHub\kursovaya\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form3.resources
+C:\Users\youan\Documents\GitHub\kursovaya\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form4.resources
+C:\Users\youan\Documents\GitHub\kursovaya\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form5.resources
+C:\Users\youan\Documents\GitHub\kursovaya\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form6.resources
+C:\Users\youan\Documents\GitHub\kursovaya\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form7.resources
+C:\Users\youan\Documents\GitHub\kursovaya\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form8.resources
+C:\Users\youan\Documents\GitHub\kursovaya\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form9.resources
+C:\Users\youan\Documents\GitHub\kursovaya\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Properties.Resources.resources
+C:\Users\youan\Documents\GitHub\kursovaya\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.csproj.GenerateResource.cache
+C:\Users\youan\Documents\GitHub\kursovaya\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.csproj.CoreCompileInputs.cache
+C:\Users\youan\Documents\GitHub\kursovaya\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.exe
+C:\Users\youan\Documents\GitHub\kursovaya\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.pdb

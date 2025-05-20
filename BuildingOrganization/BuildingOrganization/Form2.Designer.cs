@@ -98,9 +98,9 @@
             this.button4.BackColor = System.Drawing.Color.AntiqueWhite;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(602, 360);
+            this.button4.Location = new System.Drawing.Point(602, 372);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(149, 51);
+            this.button4.Size = new System.Drawing.Size(149, 66);
             this.button4.TabIndex = 6;
             this.button4.Text = "Отобразить все";
             this.button4.UseVisualStyleBackColor = false;
@@ -113,7 +113,7 @@
             this.button5.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button5.Location = new System.Drawing.Point(602, 301);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(149, 47);
+            this.button5.Size = new System.Drawing.Size(149, 63);
             this.button5.TabIndex = 5;
             this.button5.Text = "Отобразить";
             this.button5.UseVisualStyleBackColor = false;

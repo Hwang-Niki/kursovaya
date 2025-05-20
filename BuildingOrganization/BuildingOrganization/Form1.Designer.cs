@@ -65,9 +65,9 @@
             this.button2.BackColor = System.Drawing.Color.AntiqueWhite;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(670, 411);
+            this.button2.Location = new System.Drawing.Point(670, 396);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(139, 55);
+            this.button2.Size = new System.Drawing.Size(139, 70);
             this.button2.TabIndex = 2;
             this.button2.Text = "Отобразить все";
             this.button2.UseVisualStyleBackColor = false;
