@@ -41,7 +41,7 @@ namespace BuildingOrganization
                 return;
             }
 
-            var allButtons = new List<Button> { button1, button2, button3, button4, button5, button6, button7, button9 };
+            var allButtons = new List<Button> { button1, button2, button3, button4, button5, button6, button7, button9, button10 };
 
             // Сначала скрываем все кнопки
             foreach (var btn in allButtons)
@@ -92,6 +92,7 @@ namespace BuildingOrganization
             const int horizontalMargin = 40;
             const int startX = 20;
             const int startY = 80;
+            const int formPadding = 40;
 
             // Определяем количество колонок (максимум 2)
             int columns = (activeButtons.Count > 4) ? 2 : 1;
@@ -116,6 +117,18 @@ namespace BuildingOrganization
             int button8Y = startY + rows * (buttonHeight + verticalMargin) + verticalMargin;
 
             button8.Location = new Point(button8X, button8Y);
+
+            // Рассчитываем новую высоту формы
+            int newHeight = button8Y + button8.Height + formPadding;
+
+            // Рассчитываем новую ширину формы (оставляем фиксированную или тоже динамическую)
+            int newWidth = this.Width; // Можно оставить как есть или рассчитать
+
+            // Устанавливаем новый размер формы
+            this.ClientSize = new Size(newWidth, newHeight);
+
+            // Центрируем форму на экране (опционально)
+            this.CenterToScreen();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -172,6 +185,12 @@ namespace BuildingOrganization
         {
             Form frm6 = new Form6();
             frm6.Show();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Form frm11 = new Form11();
+            frm11.Show();
         }
     }
 }

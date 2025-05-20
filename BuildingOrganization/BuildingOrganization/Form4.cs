@@ -9,8 +9,10 @@ namespace BuildingOrganization
     public partial class Form4 : Form
     {
 
-        private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\практики и курсовая\курсовая 3к2с\BuildingOrganization\BuildingOrganization\Database1.mdf;Integrated Security=True";
+        private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\youan\Documents\GitHub\kursovaya\BuildingOrganization\BuildingOrganization\Database1.mdf;Integrated Security=True";
         public static Users currentUser { get; set; } = null;
+        private const int MaxFailedAttempts = 5;
+        private const int LockoutMinutes = 120;
 
         public Form4()
         {
@@ -40,7 +42,8 @@ namespace BuildingOrganization
                         connection.Open();
 
                         string query = @"SELECT u.UserID, u.LastName, u.FirstName, u.MiddleName, 
-                                u.Position, u.Id_role, r.role, u.Password
+                                u.Position, u.Id_role, r.role, u.Password, u.IsLocked, 
+                                u.FailedLoginAttempts, u.LockedUntil
                                 FROM Users u
                                 JOIN Role r ON u.Id_role = r.Id_role
                                 WHERE u.Username = @Username";
@@ -52,12 +55,29 @@ namespace BuildingOrganization
                         {
                             if (reader.Read())
                             {
+                                bool isLocked = Convert.ToBoolean(reader["IsLocked"]);
+                                DateTime? lockedUntil = reader["LockedUntil"] as DateTime?;
+
+                                if (isLocked && lockedUntil.HasValue && lockedUntil > DateTime.Now)
+                                {
+                                    MessageBox.Show($"Учетная запись заблокирована до {lockedUntil.Value:dd.MM.yyyy HH:mm}",
+                                        "Учетная запись заблокирована",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    return;
+                                }
+                                else if (isLocked)
+                                {
+                                    // Автоматическая разблокировка по истечении времени
+                                    UnlockUserAccount(Convert.ToInt32(reader["UserID"]));
+                                }
+
                                 string storedPassword = reader["Password"].ToString();
                                 string inputPasswordHash = HashPassword(password);
 
 
                                 if (inputPasswordHash.Trim() == storedPassword.Trim())
                                 {
+                                     ResetFailedLoginAttempts(Convert.ToInt32(reader["UserID"]));
                                     // Используем статическое свойство вместо локальной переменной
                                     Form4.currentUser = new Users(
                                         Convert.ToInt32(reader["UserID"]),
@@ -85,8 +105,23 @@ namespace BuildingOrganization
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Неверный пароль\n", "Ошибка авторизации",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    int failedAttempts = Convert.ToInt32(reader["FailedLoginAttempts"]);
+                                    failedAttempts++;
+
+                                    if (failedAttempts >= MaxFailedAttempts)
+                                    {
+                                        LockUserAccount(Convert.ToInt32(reader["UserID"]));
+                                        MessageBox.Show($"Неверный пароль. Учетная запись заблокирована на {LockoutMinutes} минут.",
+                                            "Ошибка авторизации",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                    else
+                                    {
+                                        UpdateFailedLoginAttempts(Convert.ToInt32(reader["UserID"]), failedAttempts);
+                                        MessageBox.Show($"Неверный пароль. Осталось попыток: {MaxFailedAttempts - failedAttempts}",
+                                            "Ошибка авторизации",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
                                 }
                             }
                             else
@@ -115,6 +150,77 @@ namespace BuildingOrganization
                 textBox1.Text = "";
                 textBox2.Text = "";
             }
+        }
+
+        private void UpdateFailedLoginAttempts(int userId, int attempts)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "UPDATE Users SET FailedLoginAttempts = @Attempts WHERE UserID = @UserID";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@Attempts", attempts);
+                    command.Parameters.AddWithValue("@UserID", userId);
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch { /* Логирование ошибки */ }
+        }
+
+        private void ResetFailedLoginAttempts(int userId)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "UPDATE Users SET FailedLoginAttempts = 0, IsLocked = 0, LockedUntil = NULL WHERE UserID = @UserID";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@UserID", userId);
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch { /* Логирование ошибки */ }
+        }
+
+        private void LockUserAccount(int userId)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = @"UPDATE Users 
+                                   SET FailedLoginAttempts = @Attempts, 
+                                       IsLocked = 1, 
+                                       LockedUntil = DATEADD(MINUTE, @LockoutMinutes, GETDATE())
+                                   WHERE UserID = @UserID";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@Attempts", MaxFailedAttempts);
+                    command.Parameters.AddWithValue("@LockoutMinutes", LockoutMinutes);
+                    command.Parameters.AddWithValue("@UserID", userId);
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch { /* Логирование ошибки */ }
+        }
+
+        private void UnlockUserAccount(int userId)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "UPDATE Users SET IsLocked = 0, LockedUntil = NULL WHERE UserID = @UserID";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@UserID", userId);
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch { /* Логирование ошибки */ }
         }
 
         private void UpdateLastLogin(int userId)

@@ -59,3 +59,4 @@ C:\Users\youan\Documents\GitHub\kursovaya\BuildingOrganization\BuildingOrganizat
 C:\Users\youan\Documents\GitHub\kursovaya\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.csproj.CoreCompileInputs.cache
 C:\Users\youan\Documents\GitHub\kursovaya\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.exe
 C:\Users\youan\Documents\GitHub\kursovaya\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.pdb
+C:\Users\youan\Documents\GitHub\kursovaya\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form11.resources

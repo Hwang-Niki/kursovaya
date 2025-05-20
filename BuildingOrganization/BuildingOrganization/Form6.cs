@@ -14,7 +14,7 @@ namespace BuildingOrganization
 {
     public partial class Form6 : Form
     {
-        private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\практики и курсовая\курсовая 3к2с\BuildingOrganization\BuildingOrganization\Database1.mdf;Integrated Security=True";
+        private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\youan\Documents\GitHub\kursovaya\BuildingOrganization\BuildingOrganization\Database1.mdf;Integrated Security=True";
         public Form6()
         {
             InitializeComponent();
