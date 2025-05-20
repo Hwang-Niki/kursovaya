@@ -1,0 +1,40 @@
+E:\рпбд\контрольная работа\BuildingOrganization\BuildingOrganization\bin\Debug\Database1.mdf
+E:\рпбд\контрольная работа\BuildingOrganization\BuildingOrganization\bin\Debug\Database1_log.ldf
+E:\рпбд\контрольная работа\BuildingOrganization\BuildingOrganization\bin\Debug\BuildingOrganization.exe.config
+E:\рпбд\контрольная работа\BuildingOrganization\BuildingOrganization\bin\Debug\BuildingOrganization.exe
+E:\рпбд\контрольная работа\BuildingOrganization\BuildingOrganization\bin\Debug\BuildingOrganization.pdb
+E:\рпбд\контрольная работа\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.csproj.AssemblyReference.cache
+E:\рпбд\контрольная работа\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Properties.Resources.resources
+E:\рпбд\контрольная работа\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.csproj.GenerateResource.cache
+E:\рпбд\контрольная работа\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.csproj.CoreCompileInputs.cache
+E:\рпбд\контрольная работа\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.exe
+E:\рпбд\контрольная работа\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.pdb
+E:\рпбд\контрольная работа\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form2.resources
+E:\рпбд\контрольная работа\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form3.resources
+E:\рпбд\контрольная работа\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form1.resources
+E:\рпбд\контрольная работа\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form5.resources
+E:\рпбд\контрольная работа\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form7.resources
+E:\рпбд\контрольная работа\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form8.resources
+E:\рпбд\контрольная работа\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form9.resources
+E:\рпбд\контрольная работа\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form10.resources
+E:\практики и курсовая\курсовая 3к2с\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.csproj.AssemblyReference.cache
+E:\практики и курсовая\курсовая 3к2с\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form1.resources
+E:\практики и курсовая\курсовая 3к2с\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form10.resources
+E:\практики и курсовая\курсовая 3к2с\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form2.resources
+E:\практики и курсовая\курсовая 3к2с\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form3.resources
+E:\практики и курсовая\курсовая 3к2с\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form4.resources
+E:\практики и курсовая\курсовая 3к2с\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form5.resources
+E:\практики и курсовая\курсовая 3к2с\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form7.resources
+E:\практики и курсовая\курсовая 3к2с\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form8.resources
+E:\практики и курсовая\курсовая 3к2с\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form9.resources
+E:\практики и курсовая\курсовая 3к2с\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Properties.Resources.resources
+E:\практики и курсовая\курсовая 3к2с\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.csproj.GenerateResource.cache
+E:\практики и курсовая\курсовая 3к2с\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.csproj.CoreCompileInputs.cache
+E:\практики и курсовая\курсовая 3к2с\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.exe
+E:\практики и курсовая\курсовая 3к2с\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.pdb
+E:\практики и курсовая\курсовая 3к2с\BuildingOrganization\BuildingOrganization\bin\Debug\Database1.mdf
+E:\практики и курсовая\курсовая 3к2с\BuildingOrganization\BuildingOrganization\bin\Debug\Database1_log.ldf
+E:\практики и курсовая\курсовая 3к2с\BuildingOrganization\BuildingOrganization\bin\Debug\BuildingOrganization.exe.config
+E:\практики и курсовая\курсовая 3к2с\BuildingOrganization\BuildingOrganization\bin\Debug\BuildingOrganization.exe
+E:\практики и курсовая\курсовая 3к2с\BuildingOrganization\BuildingOrganization\bin\Debug\BuildingOrganization.pdb
+E:\практики и курсовая\курсовая 3к2с\BuildingOrganization\BuildingOrganization\obj\Debug\BuildingOrganization.Form6.resources
