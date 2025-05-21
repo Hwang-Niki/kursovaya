@@ -27,8 +27,8 @@ namespace BuildingOrganization
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = @"SELECT u.UserID, u.Username, u.LastName, u.FirstName, 
-                                    u.IsLocked, u.LockedUntil, u.FailedLoginAttempts, r.role
+                    string query = @"SELECT u.UserID, u.Username AS [Логин], u.LastName AS [Фамилия], u.FirstName AS [Имя], u.MiddleName AS [Отчество],
+                                    u.IsLocked AS [Блокировка], u.LockedUntil AS [Заблокировано до], u.FailedLoginAttempts AS [Ошибки при авторизации], r.role AS [Роль]
                                     FROM Users u
                                     JOIN Role r ON u.Id_role = r.Id_role
                                     ORDER BY u.LastName, u.FirstName";
@@ -58,7 +58,7 @@ namespace BuildingOrganization
             }
 
             int userId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["UserID"].Value);
-            string username = dataGridView1.SelectedRows[0].Cells["Username"].Value.ToString();
+            string username = dataGridView1.SelectedRows[0].Cells["Логин"].Value.ToString();
 
             if (MessageBox.Show($"Заблокировать пользователя {username}?", "Подтверждение",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -102,7 +102,7 @@ namespace BuildingOrganization
             }
 
             int userId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["UserID"].Value);
-            string username = dataGridView1.SelectedRows[0].Cells["Username"].Value.ToString();
+            string username = dataGridView1.SelectedRows[0].Cells["Логин"].Value.ToString();
 
             if (MessageBox.Show($"Разблокировать пользователя {username}?", "Подтверждение",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

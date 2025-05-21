@@ -28,7 +28,7 @@ namespace BuildingOrganization
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "SELECT Id_role, role FROM Role WHERE Id_role > 1"; // Исключаем администратора
+                    string query = "SELECT Id_role, role FROM Role"; // Исключаем администратора
                     SqlCommand command = new SqlCommand(query, connection);
                     SqlDataReader reader = command.ExecuteReader();
 
