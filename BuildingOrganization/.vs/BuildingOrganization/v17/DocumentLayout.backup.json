@@ -7,8 +7,12 @@
       "RelativeMoniker": "D:0:0:{53E099E8-AFF9-4FEC-B2D1-CA929AD5C0F9}|BuildingOrganization\\BuildingOrganization.csproj|solutionrelative:buildingorganization\\form11.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{53E099E8-AFF9-4FEC-B2D1-CA929AD5C0F9}|BuildingOrganization\\BuildingOrganization.csproj|C:\\Users\\youan\\Documents\\GitHub\\kursovaya\\BuildingOrganization\\buildingorganization\\form11.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{53E099E8-AFF9-4FEC-B2D1-CA929AD5C0F9}|BuildingOrganization\\BuildingOrganization.csproj|solutionrelative:buildingorganization\\form11.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{53E099E8-AFF9-4FEC-B2D1-CA929AD5C0F9}|BuildingOrganization\\BuildingOrganization.csproj|c:\\users\\youan\\documents\\github\\kursovaya\\buildingorganization\\buildingorganization\\form10.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{53E099E8-AFF9-4FEC-B2D1-CA929AD5C0F9}|BuildingOrganization\\BuildingOrganization.csproj|solutionrelative:buildingorganization\\form10.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53E099E8-AFF9-4FEC-B2D1-CA929AD5C0F9}|BuildingOrganization\\BuildingOrganization.csproj|c:\\users\\youan\\documents\\github\\kursovaya\\buildingorganization\\buildingorganization\\form10.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{53E099E8-AFF9-4FEC-B2D1-CA929AD5C0F9}|BuildingOrganization\\BuildingOrganization.csproj|solutionrelative:buildingorganization\\form10.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,23 +34,36 @@
               "Title": "Form11.cs",
               "DocumentMoniker": "C:\\Users\\youan\\Documents\\GitHub\\kursovaya\\BuildingOrganization\\BuildingOrganization\\Form11.cs",
               "RelativeDocumentMoniker": "BuildingOrganization\\Form11.cs",
-              "ToolTip": "C:\\Users\\youan\\Documents\\GitHub\\kursovaya\\BuildingOrganization\\BuildingOrganization\\Form11.cs*",
-              "RelativeToolTip": "BuildingOrganization\\Form11.cs*",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAewGgAAABIAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\youan\\Documents\\GitHub\\kursovaya\\BuildingOrganization\\BuildingOrganization\\Form11.cs",
+              "RelativeToolTip": "BuildingOrganization\\Form11.cs",
+              "ViewState": "AgIAAK0AAAAAAAAAAAAkwMkAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T10:50:15.814Z",
+              "WhenOpened": "2025-05-25T13:38:58.456Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Form11.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\youan\\Documents\\GitHub\\kursovaya\\BuildingOrganization\\BuildingOrganization\\Form11.cs",
-              "RelativeDocumentMoniker": "BuildingOrganization\\Form11.cs",
-              "ToolTip": "C:\\Users\\youan\\Documents\\GitHub\\kursovaya\\BuildingOrganization\\BuildingOrganization\\Form11.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]*",
-              "RelativeToolTip": "BuildingOrganization\\Form11.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]*",
+              "Title": "Form10.cs",
+              "DocumentMoniker": "C:\\Users\\youan\\Documents\\GitHub\\kursovaya\\BuildingOrganization\\BuildingOrganization\\Form10.cs",
+              "RelativeDocumentMoniker": "BuildingOrganization\\Form10.cs",
+              "ToolTip": "C:\\Users\\youan\\Documents\\GitHub\\kursovaya\\BuildingOrganization\\BuildingOrganization\\Form10.cs",
+              "RelativeToolTip": "BuildingOrganization\\Form10.cs",
+              "ViewState": "AgIAAGYBAAAAAAAAAAAkwIgBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T16:30:16.59Z",
+              "WhenOpened": "2025-05-25T11:51:16.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form10.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\youan\\Documents\\GitHub\\kursovaya\\BuildingOrganization\\BuildingOrganization\\Form10.cs",
+              "RelativeDocumentMoniker": "BuildingOrganization\\Form10.cs",
+              "ToolTip": "C:\\Users\\youan\\Documents\\GitHub\\kursovaya\\BuildingOrganization\\BuildingOrganization\\Form10.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "BuildingOrganization\\Form10.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T11:44:38.247Z",
               "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
             }
           ]

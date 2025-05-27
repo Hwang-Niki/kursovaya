@@ -137,7 +137,67 @@ namespace BuildingOrganization
 
         private void button3_Click(object sender, EventArgs e)
         {
-            LoadUsers();
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Выберите пользователя", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int userId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["UserID"].Value);
+            string username = dataGridView1.SelectedRows[0].Cells["Логин"].Value.ToString();
+
+            // Проверка, что пользователь не пытается удалить самого себя
+            if (userId == Form4.currentUser.UserID)
+            {
+                MessageBox.Show("Вы не можете удалить свою собственную учетную запись!", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (MessageBox.Show($"Вы уверены, что хотите удалить пользователя {username}?\nЭто действие нельзя отменить!", "Подтверждение удаления",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                try
+                {
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        connection.Open();
+
+                        // Удаляем пользователя
+                        string query = "DELETE FROM Users WHERE UserID = @UserID";
+                        SqlCommand command = new SqlCommand(query, connection);
+                        command.Parameters.AddWithValue("@UserID", userId);
+
+                        int result = command.ExecuteNonQuery();
+
+                        if (result > 0)
+                        {
+                            MessageBox.Show("Пользователь успешно удален", "Успех",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadUsers(); // Обновляем список пользователей
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    if (ex.Number == 547) // Ошибка внешнего ключа
+                    {
+                        MessageBox.Show("Нельзя удалить пользователя, так как он связан с другими записями в системе.", "Ошибка",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Ошибка удаления пользователя: {ex.Message}", "Ошибка",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка удаления пользователя: {ex.Message}", "Ошибка",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

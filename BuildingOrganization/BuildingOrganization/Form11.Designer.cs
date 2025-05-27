@@ -88,7 +88,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(157, 55);
             this.button3.TabIndex = 11;
-            this.button3.Text = "Обновить";
+            this.button3.Text = "Удалить";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
