@@ -61,92 +61,145 @@ namespace BuildingOrganization
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string objectName = txtObjectName.Text.Trim(); // Получаем название объекта
-            DateTime startDate = dateTimePickerStart.Value; // Получаем начальную дату из DateTimePicker
-            DateTime endDate = dateTimePickerEnd.Value; // Получаем конечную дату из DateTimePicker
 
-            if (!string.IsNullOrEmpty(objectName))
+            try
             {
-                try
+                // Проверяем, выбран ли хотя бы один вариант поиска
+                if (!radioButtonObjectOnly.Checked && !radioButtonPeriodOnly.Checked)
                 {
-                    using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.Database1ConnectionString))
-                    {
-                        connection.Open(); // Открываем соединение
+                    MessageBox.Show("Введите название объекта или выберите период времени",
+                                  "Не выбраны условия поиска",
+                                  MessageBoxButtons.OK,
+                                  MessageBoxIcon.Warning);
+                    return;
+                }
 
-                        // Получаем ObjectID по названию объекта
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.Database1ConnectionString))
+                {
+                    connection.Open();
+                    DataTable dataTable = new DataTable();
+
+                    // Для варианта "Только по периоду" не проверяем название объекта
+                    if (radioButtonPeriodOnly.Checked)
+                    {
+                        DateTime startDate = dateTimePickerStart.Value;
+                        DateTime endDate = dateTimePickerEnd.Value;
+
+                        string query = @"
+                    SELECT 
+                        ce.EquipmentID AS [Идентификатор оборудования],
+                        et.Name AS [Тип оборудования],
+                        ce.Name AS [Наименование],
+                        ce.RegistrationNumber AS [Регистрационный номер],
+                        ce.ManufactureYear AS [Год выпуска],
+                        ce.Condition AS [Состояние],
+                        co.Name AS [Объект],
+                        eu.StartDate AS [Дата начала],
+                        eu.EndDate AS [Дата окончания]
+                    FROM 
+                        EquipmentUsage eu
+                    JOIN 
+                        ConstructionEquipment ce ON eu.EquipmentID = ce.EquipmentID
+                    JOIN 
+                        EquipmentTypes et ON ce.TypeID = et.TypeID
+                    JOIN 
+                        ConstructionObjects co ON eu.UsageID = co.ObjectID
+                    WHERE 
+                        eu.StartDate BETWEEN @StartDate AND @EndDate";
+
+                        SqlCommand command = new SqlCommand(query, connection);
+                        command.Parameters.AddWithValue("@StartDate", startDate);
+                        command.Parameters.AddWithValue("@EndDate", endDate);
+
+                        SqlDataAdapter adapter = new SqlDataAdapter(command);
+                        adapter.Fill(dataTable);
+                    }
+                    else // Для вариантов с объектом
+                    {
+                        string objectName = txtObjectName.Text.Trim();
+
+                        if (string.IsNullOrEmpty(objectName))
+                        {
+                            MessageBox.Show("Введите название объекта.");
+                            return;
+                        }
+
                         string getObjectIdQuery = "SELECT ObjectID FROM ConstructionObjects WHERE Name = @ObjectName";
                         SqlCommand getObjectIdCommand = new SqlCommand(getObjectIdQuery, connection);
                         getObjectIdCommand.Parameters.AddWithValue("@ObjectName", objectName);
 
                         object result = getObjectIdCommand.ExecuteScalar();
 
-                        if (result != null)
+                        if (result == null) // Исправлено условие - было if (result != null)
                         {
-                            int objectId = Convert.ToInt32(result);
+                            MessageBox.Show("Объект не найден.");
+                            return;
+                        }
 
-                            // Выполняем запрос для получения отфильтрованных данных
+                        int objectId = Convert.ToInt32(result);
+
+                        if (radioButtonObjectOnly.Checked)
+                        {
                             string query = @"
-                                SELECT 
-                                    ce.EquipmentID AS [Идентификатор оборудования],
-                                    et.Name  AS [Тип оборудования],
-                                    ce.Name AS [Наименование],
-                                    ce.RegistrationNumber AS [Регистрационный номер],
-                                    ce.ManufactureYear AS [Год выпуска],
-                                    ce.Condition AS [Состояние],
-                                    co.Name AS [Объект],
-                                    eu.StartDate AS [Дата начала],
-                                    eu.EndDate AS [Дата окончания]
-                                FROM 
-                                    EquipmentUsage eu
-                                JOIN 
-                                    ConstructionEquipment ce ON eu.EquipmentID = ce.EquipmentID
-                                JOIN 
-                                    EquipmentTypes et ON ce.TypeID = et.TypeID
-                                JOIN 
-                                    ConstructionObjects co ON eu.UsageID = co.ObjectID
-                                WHERE 
-                                    eu.UsageID = @UsageID AND 
-                                    eu.StartDate BETWEEN @StartDate AND @EndDate";
+                        SELECT 
+                            ce.EquipmentID AS [Идентификатор оборудования],
+                            et.Name AS [Тип оборудования],
+                            ce.Name AS [Наименование],
+                            ce.RegistrationNumber AS [Регистрационный номер],
+                            ce.ManufactureYear AS [Год выпуска],
+                            ce.Condition AS [Состояние],
+                            co.Name AS [Объект],
+                            eu.StartDate AS [Дата начала],
+                            eu.EndDate AS [Дата окончания]
+                        FROM 
+                            EquipmentUsage eu
+                        JOIN 
+                            ConstructionEquipment ce ON eu.EquipmentID = ce.EquipmentID
+                        JOIN 
+                            EquipmentTypes et ON ce.TypeID = et.TypeID
+                        JOIN 
+                            ConstructionObjects co ON eu.UsageID = co.ObjectID
+                        WHERE 
+                            eu.UsageID = @UsageID";
 
                             SqlCommand command = new SqlCommand(query, connection);
                             command.Parameters.AddWithValue("@UsageID", objectId);
-                            command.Parameters.AddWithValue("@StartDate", startDate);
-                            command.Parameters.AddWithValue("@EndDate", endDate);
-
                             SqlDataAdapter adapter = new SqlDataAdapter(command);
-                            DataTable dataTable = new DataTable();
                             adapter.Fill(dataTable);
-
-                            if (dataTable.Rows.Count > 0)
-                            {
-                                dataGridView1.DataSource = dataTable; // Обновляем DataGridView с результатами
-                            }
-                            else
-                            {
-                                MessageBox.Show("Нет техники, выделенной на указанный объект в указанный период.");
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Объект не найден.");
                         }
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Ошибка: " + ex.Message);
+
+                    if (dataTable.Rows.Count > 0)
+                    {
+                        dataGridView1.DataSource = dataTable;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Нет данных, соответствующих условиям поиска.");
+                    }
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Введите название объекта.");
+                MessageBox.Show("Ошибка: " + ex.Message);
             }
         }
    
-
         private void button2_Click(object sender, EventArgs e)
         {
             LoadAllData();
+        }
+
+        private void radioButtonObjectOnly_CheckedChanged(object sender, EventArgs e)
+        {
+            dateTimePickerStart.Enabled = !radioButtonObjectOnly.Checked;
+            dateTimePickerEnd.Enabled = !radioButtonObjectOnly.Checked;
+        }
+
+        private void radioButtonPeriodOnly_CheckedChanged(object sender, EventArgs e)
+        {
+            dateTimePickerStart.Enabled = radioButtonPeriodOnly.Checked;
+            dateTimePickerEnd.Enabled = radioButtonPeriodOnly.Checked;
         }
     }
 }

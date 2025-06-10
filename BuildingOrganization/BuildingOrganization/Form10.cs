@@ -27,18 +27,11 @@ namespace BuildingOrganization
                 {"Brigades", "Бригады"},
                 {"ConstructionEquipment", "Строительная техника"},
                 {"ConstructionManagement", "Строительные управления"},
-                {"ConstructionMaterials", "Строительные материалы"},
                 {"ConstructionObjects", "Объекты строительства"},
                 {"ConstructionSites", "Участки строительства"},
-                {"Contracts", "Договоры"},
-                {"Customers", "Заказчики"},
                 {"Employees", "Сотрудники"},
                 {"EquipmentTypes", "Типы техники"},
                 {"Estimates", "Сметы"},
-                {"MaterialPlans", "Планы материалов"},
-                {"MaterialUsage", "Использование материалов"},
-                {"ObjectType", "Типы объектов"},
-                {"Positions", "Должности"},
                 {"WorkReports", "Отчеты о работах"},
                 {"WorkSchedules", "Графики работ"},
                 {"WorkTypes", "Виды работ"}
@@ -111,67 +104,37 @@ namespace BuildingOrganization
             switch (tableName)
             {
                 case "Brigades":
-                    translations.Add("BrigadeID", "ID бригады");
+                    translations.Add("BrigadeID", "Номер бригады");
                     translations.Add("Name", "Название");
                     translations.Add("CreationDate", "Дата создания");
-                    translations.Add("ForemanID", "ID бригадира");
+                    translations.Add("ForemanID", "Номер бригадира");
                     break;
                 case "ConstructionEquipment":
-                    translations.Add("EquipmentID", "ID оборудования");
+                    translations.Add("EquipmentID", "Номер оборудования");
                     translations.Add("Name", "Название");
                     translations.Add("RegistrationNumber", "Регистрационный номер");
                     translations.Add("ManufactureYear", "Год выпуска");
                     translations.Add("Condition", "Состояние");
                     translations.Add("TypeID", "Тип техники");
-                    translations.Add("ManagementID", "ID управления");
+                    translations.Add("ManagementID", "Номер управления");
                     break;
                 case "ConstructionManagement":
-                    translations.Add("ManagementID", "ID управления");
+                    translations.Add("ManagementID", "Номер управления");
                     translations.Add("Name", "Название");
                     translations.Add("Address", "Адрес");
                     translations.Add("Phone", "Телефон");
                     translations.Add("CreationDate", "Дата создания");
                     break;
 
-                case "ObjectTypes":
-                    translations.Add("TypeID", "ID типа");
-                    translations.Add("TypeName", "Тип объекта");
-                    translations.Add("Description", "Описание");
-                    break;
-
-                case "Customers":
-                    translations.Add("CustomerID", "ID заказчика");
-                    translations.Add("Name", "Название");
-                    translations.Add("Address", "Адрес");
-                    translations.Add("Phone", "Телефон");
-                    translations.Add("ContactPerson", "Контактное лицо");
-                    break;
-
-                case "Contracts":
-                    translations.Add("ContractID", "ID договора");
-                    translations.Add("ContractNumber", "Номер договора");
-                    translations.Add("SignDate", "Дата подписания");
-                    translations.Add("CompletionTerm", "Срок выполнения");
-                    translations.Add("Amount", "Сумма");
-                    translations.Add("CustomerID", "ID заказчика");
-                    break;
-
-                case "Positions":
-                    translations.Add("PositionID", "ID должности");
-                    translations.Add("Title", "Должность");
-                    translations.Add("Category", "Категория");
-                    translations.Add("Description", "Описание");
-                    break;
-
                 case "Employees":
-                    translations.Add("EmployeeID", "ID сотрудника");
+                    translations.Add("EmployeeID", "Идентификатор сотрудника");
                     translations.Add("FullName", "ФИО");
                     translations.Add("BirthDate", "Дата рождения");
                     translations.Add("PassportData", "Паспортные данные");
                     translations.Add("Phone", "Телефон");
                     translations.Add("Address", "Адрес");
                     translations.Add("HireDate", "Дата приема");
-                    translations.Add("PositionID", "ID должности");
+                    translations.Add("PositionID", "Номер должности");
                     translations.Add("Qualification", "Квалификация");
                     translations.Add("Rank", "Разряд");
                     translations.Add("Specialization", "Специализация");
@@ -179,33 +142,29 @@ namespace BuildingOrganization
                     break;
 
                 case "ConstructionSites":
-                    translations.Add("SiteID", "ID участка");
+                    translations.Add("SiteID", "Номер участка");
                     translations.Add("Name", "Название");
                     translations.Add("Address", "Адрес");
-                    translations.Add("ManagementID", "ID управления");
-                    translations.Add("ManagerID", "ID менеджера");
+                    translations.Add("ManagementID", "Номер управления");
+                    translations.Add("ManagerID", "Идентификатор менеджера");
                     break;
 
-                case "EquipmentTypes":
-                    translations.Add("TypeID", "ID типа");
-                    translations.Add("Name", "Название");
-                    translations.Add("Description", "Описание");
-                    break;
+                
                 case "ConstructionObjects":
-                    translations.Add("ObjectID", "ID объекта");
+                    translations.Add("ObjectID", "Идентификатор объекта");
                     translations.Add("Name", "Название");
                     translations.Add("Address", "Адрес");
                     translations.Add("StartDate", "Дата начала");
                     translations.Add("PlannedEndDate", "Планируемая дата завершения");
-                    translations.Add("SiteID", "ID участка");
-                    translations.Add("ContractID", "ID договора");
+                    translations.Add("SiteID", "Номер участка");
+                    translations.Add("ContractID", "Номер договора");
                     translations.Add("TypeID", "Тип объекта");
                     translations.Add("FloorsCount", "Количество этажей");
                     translations.Add("MaterialType", "Тип материала");
                     break;
 
                 case "WorkTypes":
-                    translations.Add("WorkTypeID", "ID вида работ");
+                    translations.Add("WorkTypeID", "Идентификатор вида работ");
                     translations.Add("Name", "Название");
                     translations.Add("Description", "Описание");
                     translations.Add("TimeNorm", "Норма времени");
@@ -213,77 +172,33 @@ namespace BuildingOrganization
                     break;
 
                 case "WorkSchedules":
-                    translations.Add("ScheduleID", "ID графика");
-                    translations.Add("ObjectID", "ID объекта");
-                    translations.Add("WorkTypeID", "ID вида работ");
+                    translations.Add("ScheduleID", "Номер графика");
+                    translations.Add("ObjectID", "Номер объекта");
+                    translations.Add("WorkTypeID", "Идентификатор вида работ");
                     translations.Add("PlannedStartDate", "Планируемая дата начала");
                     translations.Add("PlannedEndDate", "Планируемая дата завершения");
-                    translations.Add("BrigadeID", "ID бригады");
+                    translations.Add("BrigadeID", "Номер бригады");
                     break;
 
                 case "Estimates":
-                    translations.Add("EstimateID", "ID сметы");
-                    translations.Add("ObjectID", "ID объекта");
+                    translations.Add("EstimateID", "Номер сметы");
+                    translations.Add("ObjectID", "Идентификатор объекта");
                     translations.Add("CreationDate", "Дата создания");
-                    translations.Add("ApprovedBy", "Утверждающее лицо (ID)");
+                    translations.Add("ApprovedBy", "Утверждающее лицо (Идентификатор)");
                     translations.Add("TotalCost", "Общая стоимость");
                     break;
 
-                case "ConstructionMaterials":
-                    translations.Add("MaterialID", "ID материала");
-                    translations.Add("Name", "Название");
-                    translations.Add("Unit", "Единица измерения");
-                    translations.Add("Description", "Описание");
-                    break;
-
-                case "MaterialPlans":
-                    translations.Add("PlanID", "ID плана");
-                    translations.Add("EstimateID", "ID сметы");
-                    translations.Add("MaterialID", "ID материала");
-                    translations.Add("PlannedQuantity", "Планируемое количество");
-                    break;
 
                 case "WorkReports":
-                    translations.Add("ReportID", "ID отчета");
-                    translations.Add("ScheduleID", "ID графика");
+                    translations.Add("ReportID", "Номер отчета");
+                    translations.Add("ScheduleID", "Номер графика");
                     translations.Add("ActualStartDate", "Фактическая дата начала");
                     translations.Add("ActualEndDate", "Фактическая дата завершения");
                     translations.Add("CompletionStatus", "Статус выполнения");
                     translations.Add("Notes", "Примечания");
                     break;
 
-                case "MaterialUsage":
-                    translations.Add("UsageID", "ID использования");
-                    translations.Add("PlanID", "ID плана");
-                    translations.Add("MaterialID", "ID материала");
-                    translations.Add("ActualQuantity", "Фактическое количество");
-                    translations.Add("ReportID", "ID отчета");
-                    break;
-
-                case "EquipmentUsage":
-                    translations.Add("UsageID", "ID использования");
-                    translations.Add("EquipmentID", "ID оборудования");
-                    translations.Add("ScheduleID", "ID графика");
-                    translations.Add("StartDate", "Дата начала");
-                    translations.Add("EndDate", "Дата завершения");
-                    break;
-
-                case "Role":
-                    translations.Add("Id_role", "ID роли");
-                    translations.Add("role", "Роль");
-                    break;
-
-                case "Users":
-                    translations.Add("UserID", "ID пользователя");
-                    translations.Add("LastName", "Фамилия");
-                    translations.Add("FirstName", "Имя");
-                    translations.Add("MiddleName", "Отчество");
-                    translations.Add("Username", "Логин");
-                    translations.Add("Password", "Пароль");
-                    translations.Add("Id_role", "ID роли");
-                    translations.Add("Position", "Должность");
-                    translations.Add("LastLogin", "Последний вход");
-                    break;
+             
                 default:
                     // По умолчанию оставляем оригинальные названия
                     foreach (DataGridViewColumn column in dataGridView1.Columns)

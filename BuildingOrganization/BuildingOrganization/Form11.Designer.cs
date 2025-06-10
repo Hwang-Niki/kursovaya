@@ -103,7 +103,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Name = "Form11";
-            this.Text = "Управление доступом к системе";
+            this.Text = "Управление учетными записями";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
