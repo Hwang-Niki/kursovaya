@@ -10,6 +10,7 @@ namespace BuildingOrganization
         public Form2()
         {
             InitializeComponent();
+            LoadConstructionObjects();
             LoadData();
         }
 
@@ -19,6 +20,32 @@ namespace BuildingOrganization
             this.workSchedulesTableAdapter.Fill(this.database1DataSet.WorkSchedules);
 
         }
+
+        private void LoadConstructionObjects()
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.Database1ConnectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT ObjectID, Name FROM ConstructionObjects ORDER BY Name";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    comboBoxObjects.DataSource = dataTable;
+                    comboBoxObjects.DisplayMember = "Name";
+                    comboBoxObjects.ValueMember = "ObjectID";
+                    comboBoxObjects.SelectedIndex = -1;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при загрузке списка объектов: " + ex.Message);
+            }
+        }
+
         private void LoadData()
         {
             try
@@ -66,42 +93,19 @@ namespace BuildingOrganization
 
         private void button4_Click(object sender, EventArgs e)
         {
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.Database1ConnectionString))
-                {
-                    connection.Open(); // Открываем соединение
-                    string query = @"SELECT ws.ScheduleID, 
-                            co.Name AS ObjectName, 
-                            wt.Name AS WorkTypeName, 
-                            b.Name AS BrigadeName,
-                            ws.PlannedStartDate, 
-                            ws.PlannedEndDate
-                            FROM WorkSchedules ws
-                            JOIN ConstructionObjects co ON ws.ObjectID = co.ObjectID
-                            JOIN WorkTypes wt ON ws.WorkTypeID = wt.WorkTypeID
-                            JOIN Brigades b ON ws.BrigadeID = b.BrigadeID";
-                    SqlCommand command = new SqlCommand(query, connection);
-                    SqlDataAdapter adapter = new SqlDataAdapter(command);
-                    DataTable dataTable = new DataTable();
-                    adapter.Fill(dataTable);
-
-                    dataGridView1.DataSource = dataTable; 
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ошибка: " + ex.Message);
-            }
+            LoadData();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            string objectName = txtObjectID.Text.Trim(); 
-            if (!string.IsNullOrEmpty(objectName))
+            if (comboBoxObjects.SelectedIndex == -1)
             {
-                try
-                {
+                MessageBox.Show("Выберите объект из списка.");
+                return;
+            }
+
+            try
+            {
                     using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.Database1ConnectionString))
                     {
                         connection.Open(); // Открываем соединение
@@ -115,10 +119,10 @@ namespace BuildingOrganization
                                 JOIN ConstructionObjects co ON ws.ObjectID = co.ObjectID
                                 JOIN WorkTypes wt ON ws.WorkTypeID = wt.WorkTypeID
                                 JOIN Brigades b ON ws.BrigadeID = b.BrigadeID
-                                WHERE co.Name LIKE @ObjectName"; // Поиск по имени объекта
+                                WHERE co.ObjectID = @ObjectID";
 
                         SqlCommand command = new SqlCommand(query, connection);
-                        command.Parameters.AddWithValue("@ObjectName", "%" + objectName + "%"); // Используем LIKE для частичного совпадения
+                        command.Parameters.AddWithValue("@ObjectID", comboBoxObjects.SelectedValue); 
                         SqlDataAdapter adapter = new SqlDataAdapter(command);
                         DataTable dataTable = new DataTable();
                         adapter.Fill(dataTable);
@@ -136,7 +140,7 @@ namespace BuildingOrganization
                         }
                         else
                         {
-                            MessageBox.Show("Нет объектов с указанным названием.");
+                            MessageBox.Show("Для выбранного объекта нет данных о графике работ.");
                         }
                     }
                 }
@@ -144,11 +148,6 @@ namespace BuildingOrganization
                 {
                     MessageBox.Show("Ошибка: " + ex.Message);
                 }
-            }
-            else
-            {
-                MessageBox.Show("Введите название объекта.");
-            }
         }
     }    
 }

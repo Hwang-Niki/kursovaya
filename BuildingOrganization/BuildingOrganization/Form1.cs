@@ -10,11 +10,38 @@ namespace BuildingOrganization
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             LoadAllData();
+            LoadConstructionObjects();
+        }
+
+        private void LoadConstructionObjects()
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.Database1ConnectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT ObjectID, Name FROM ConstructionObjects ORDER BY Name";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    comboBoxObjects.DataSource = dataTable;
+                    comboBoxObjects.DisplayMember = "Name";
+                    comboBoxObjects.ValueMember = "ObjectID";
+                    comboBoxObjects.SelectedIndex = -1;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при загрузке списка объектов: " + ex.Message);
+            }
         }
 
         private void LoadAllData()
@@ -67,7 +94,7 @@ namespace BuildingOrganization
                 // Проверяем, выбран ли хотя бы один вариант поиска
                 if (!radioButtonObjectOnly.Checked && !radioButtonPeriodOnly.Checked)
                 {
-                    MessageBox.Show("Введите название объекта или выберите период времени",
+                    MessageBox.Show("Выберите огбъект или выберите период времени",
                                   "Не выбраны условия поиска",
                                   MessageBoxButtons.OK,
                                   MessageBoxIcon.Warning);
@@ -116,30 +143,16 @@ namespace BuildingOrganization
                     }
                     else // Для вариантов с объектом
                     {
-                        string objectName = txtObjectName.Text.Trim();
+                       
 
-                        if (string.IsNullOrEmpty(objectName))
+                        if (comboBoxObjects.SelectedIndex == -1)
                         {
-                            MessageBox.Show("Введите название объекта.");
+                            MessageBox.Show("Выберите объект из списка.");
                             return;
                         }
 
-                        string getObjectIdQuery = "SELECT ObjectID FROM ConstructionObjects WHERE Name = @ObjectName";
-                        SqlCommand getObjectIdCommand = new SqlCommand(getObjectIdQuery, connection);
-                        getObjectIdCommand.Parameters.AddWithValue("@ObjectName", objectName);
+                        int objectId = (int)comboBoxObjects.SelectedValue;
 
-                        object result = getObjectIdCommand.ExecuteScalar();
-
-                        if (result == null) // Исправлено условие - было if (result != null)
-                        {
-                            MessageBox.Show("Объект не найден.");
-                            return;
-                        }
-
-                        int objectId = Convert.ToInt32(result);
-
-                        if (radioButtonObjectOnly.Checked)
-                        {
                             string query = @"
                         SELECT 
                             ce.EquipmentID AS [Идентификатор оборудования],
@@ -167,8 +180,7 @@ namespace BuildingOrganization
                             SqlDataAdapter adapter = new SqlDataAdapter(command);
                             adapter.Fill(dataTable);
                         }
-                    }
-
+                   
                     if (dataTable.Rows.Count > 0)
                     {
                         dataGridView1.DataSource = dataTable;

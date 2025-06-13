@@ -76,11 +76,11 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.просмотрИРедактированиеТаблицToolStripMenuItem,
             this.запросыToolStripMenuItem,
-            this.управлениеПользователямиToolStripMenuItem,
-            this.регистрацияПользователейToolStripMenuItem});
+            this.регистрацияПользователейToolStripMenuItem,
+            this.управлениеПользователямиToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(559, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(603, 29);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -175,7 +175,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FloralWhite;
-            this.ClientSize = new System.Drawing.Size(559, 281);
+            this.ClientSize = new System.Drawing.Size(603, 281);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblUserInfo);
             this.Controls.Add(this.button8);

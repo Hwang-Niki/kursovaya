@@ -20,9 +20,34 @@ namespace BuildingOrganization
 
         private void Form7_Load(object sender, EventArgs e)
         {
-
+            LoadReportIDs();
             LoadData();
 
+        }
+
+        private void LoadReportIDs()
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.Database1ConnectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT ReportID FROM WorkReports ORDER BY ReportID";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    comboBoxReports.DataSource = dataTable;
+                    comboBoxReports.DisplayMember = "ReportID";
+                    comboBoxReports.ValueMember = "ReportID";
+                    comboBoxReports.SelectedIndex = -1;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при загрузке номеров отчетов: " + ex.Message);
+            }
         }
 
         private void LoadData(int? reportID = null)
@@ -83,20 +108,20 @@ namespace BuildingOrganization
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int reportID;
-            if (int.TryParse(txtObjectID.Text.Trim(), out reportID))
+            if (comboBoxReports.SelectedIndex == -1)
             {
-                LoadData(reportID);
+                MessageBox.Show("Выберите номер отчета из списка");
+                return;
             }
-            else
-            {
-                MessageBox.Show("Введите корректный номер отчета.");
-            }
+
+            int selectedReportID = (int)comboBoxReports.SelectedValue;
+            LoadData(selectedReportID);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             LoadData();
+            comboBoxReports.SelectedIndex = -1;
         }
     }
 }

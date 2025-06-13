@@ -22,9 +22,35 @@ namespace BuildingOrganization
         private void Form5_Load(object sender, EventArgs e)
         {
             LoadData();
+            LoadConstructionObjects();
         }
 
-        private void LoadData(string filter = null)
+        private void LoadConstructionObjects()
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.Database1ConnectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT ObjectID, Name FROM ConstructionObjects ORDER BY Name";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    comboBoxObjects.DataSource = dataTable;
+                    comboBoxObjects.DisplayMember = "Name";
+                    comboBoxObjects.ValueMember = "ObjectID";
+                    comboBoxObjects.SelectedIndex = -1;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при загрузке списка объектов: " + ex.Message);
+            }
+        }
+
+        private void LoadData(int? objectId = null)
         {
             try
             {
@@ -36,15 +62,15 @@ namespace BuildingOrganization
                                    "JOIN ConstructionObjects o ON e.ObjectID = o.ObjectID " + 
                                    "JOIN Employees em ON e.ApprovedBy = em.EmployeeID";
 
-                    if (!string.IsNullOrEmpty(filter))
+                    if (objectId.HasValue)
                     {
-                        query += " WHERE o.Name LIKE @Filter";
+                        query += " WHERE o.ObjectID = @ObjectID";
                     }
 
                     SqlCommand command = new SqlCommand(query, connection);
-                    if (!string.IsNullOrEmpty(filter))
+                    if (objectId.HasValue)
                     {
-                        command.Parameters.AddWithValue("@Filter", "%" + filter + "%");
+                        command.Parameters.AddWithValue("@ObjectID", objectId.Value);
                     }
 
                     SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -64,13 +90,20 @@ namespace BuildingOrganization
 
         private void button5_Click(object sender, EventArgs e)
         {
-            string filter = txtObjectName.Text.Trim(); 
-            LoadData(filter); // Загружаем данные с фильтром по имени объекта
+            if (comboBoxObjects.SelectedIndex == -1)
+            {
+                MessageBox.Show("Выберите объект из списка");
+                return;
+            }
+
+            int selectedObjectId = (int)comboBoxObjects.SelectedValue;
+            LoadData(selectedObjectId);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             LoadData(); // Загружаем все данные без фильтрации
+            comboBoxObjects.SelectedIndex = -1;
         }
     }
 }

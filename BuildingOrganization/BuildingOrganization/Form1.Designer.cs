@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.txtObjectName = new System.Windows.Forms.TextBox();
             this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,6 +46,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioButtonPeriodOnly = new System.Windows.Forms.RadioButton();
             this.radioButtonObjectOnly = new System.Windows.Forms.RadioButton();
+            this.comboBoxObjects = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.equipmentUsageBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet2)).BeginInit();
@@ -77,13 +78,6 @@
             this.button2.Text = "Отобразить все";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // txtObjectName
-            // 
-            this.txtObjectName.Location = new System.Drawing.Point(6, 95);
-            this.txtObjectName.Name = "txtObjectName";
-            this.txtObjectName.Size = new System.Drawing.Size(376, 22);
-            this.txtObjectName.TabIndex = 4;
             // 
             // dateTimePickerStart
             // 
@@ -133,6 +127,9 @@
             this.dataGridView1.Location = new System.Drawing.Point(17, 25);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Lavender;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1038, 237);
             this.dataGridView1.TabIndex = 11;
@@ -157,13 +154,13 @@
             this.label1.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(8, 68);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(224, 21);
+            this.label1.Size = new System.Drawing.Size(148, 21);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Введите название объекта";
+            this.label1.Text = "Выберите объект";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtObjectName);
+            this.groupBox1.Controls.Add(this.comboBoxObjects);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(98, 262);
             this.groupBox1.Name = "groupBox1";
@@ -205,6 +202,14 @@
             this.radioButtonObjectOnly.UseVisualStyleBackColor = true;
             this.radioButtonObjectOnly.CheckedChanged += new System.EventHandler(this.radioButtonObjectOnly_CheckedChanged);
             // 
+            // comboBoxObjects
+            // 
+            this.comboBoxObjects.FormattingEnabled = true;
+            this.comboBoxObjects.Location = new System.Drawing.Point(12, 98);
+            this.comboBoxObjects.Name = "comboBoxObjects";
+            this.comboBoxObjects.Size = new System.Drawing.Size(357, 24);
+            this.comboBoxObjects.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -239,7 +244,6 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox txtObjectName;
         private System.Windows.Forms.DateTimePicker dateTimePickerStart;
         private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
         private System.Windows.Forms.Label label2;
@@ -253,5 +257,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton radioButtonPeriodOnly;
         private System.Windows.Forms.RadioButton radioButtonObjectOnly;
+        private System.Windows.Forms.ComboBox comboBoxObjects;
     }
 }

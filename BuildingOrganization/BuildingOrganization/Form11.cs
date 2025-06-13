@@ -70,7 +70,7 @@ namespace BuildingOrganization
                         connection.Open();
                         string query = @"UPDATE Users 
                                        SET IsLocked = 1, 
-                                           LockedUntil = DATEADD(DAY, 1, GETDATE()),
+                                           LockedUntil = DATEADD(DAY, 10, GETDATE()),
                                            FailedLoginAttempts = @MaxAttempts
                                        WHERE UserID = @UserID";
 
